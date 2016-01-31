@@ -1,4 +1,22 @@
-%h1 User Home
+%h1.text-center.subheader
+  Harlem Repot Dashboard
 
-%p
-  You are logged in.
+%ul.medium-block-grid-3
+  %li
+    .panel
+      %h4.text-center
+        =link_to new_member_path do
+          = image_tag 'new-member.png'
+          ='New Member'
+  %li
+    .panel
+      %h4.text-center
+        =link_to  members_path do
+          = image_tag 'index-member.png'
+          ='Find Member'
+  %li
+    .panel
+      %h4.text-center
+        =link_to  members_path do
+          = image_tag 'edit-member.png'
+          ='Edit Member'

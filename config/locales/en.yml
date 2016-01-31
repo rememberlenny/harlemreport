@@ -26,11 +26,11 @@
 
 en:
   brand:
-    name: 'StarterKit'
+    name: 'Harlem Report'
 
   emails:
     welcome:
-      subject: 'Welcome to StarterKit'
+      subject: 'Welcome to Harlem Report'
 
   auth:
     login:

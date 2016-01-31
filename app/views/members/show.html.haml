@@ -1,0 +1,42 @@
+%p#notice= notice
+
+%p
+  %b Firstname:
+  = @member.firstname
+%p
+  %b Lastname:
+  = @member.lastname
+%p
+  %b Date received:
+  = @member.date_received
+%p
+  %b Zone:
+  = @member.zone
+%p
+  %b Region:
+  = @member.region
+%p
+  %b Chapter:
+  = @member.chapter
+%p
+  %b District:
+  = @member.district
+%p
+  %b Sponsor name:
+  = @member.sponsor_name
+%p
+  %b Enshrined:
+  = @member.enshrined
+%p
+  %b District connected:
+  = @member.district_connected
+%p
+  %b Contact person:
+  = @member.contact_person
+%p
+  %b Note:
+  = @member.note
+
+= link_to 'Edit', edit_member_path(@member)
+\|
+= link_to 'Back', members_path

@@ -74,41 +74,6 @@
                                     %td
                                       = yield :action_button
                               %td.expander
-                  %table.row.footer
-                    %tr
-                      %td.wrapper
-                        %table.six.columns
-                          %tr
-                            %td.left-text-pad
-                              - if Rails.application.config.settings.social.facebook
-                                %table.tiny-button.facebook
-                                  %tr
-                                    %td
-                                      %a{href: Rails.application.config.settings.social.facebook} Facebook
-                                %br/
-                              - if Rails.application.config.settings.social.twitter
-                                %table.tiny-button.twitter
-                                  %tr
-                                    %td
-                                      %a{href: Rails.application.config.settings.social.twitter} Twitter
-                                %br/
-                              - if Rails.application.config.settings.social.google_plus
-                                %table.tiny-button.google-plus
-                                  %tr
-                                    %td
-                                      %a{href: Rails.application.config.settings.social.google_plus} Google +
-                            %td.expander
-                      %td.wrapper.last
-                        %table.six.columns
-                          %tr
-                            %td.last.right-text-pad
-                              %p
-                                Phone:
-                                = Rails.application.config.settings.contact.phone
-                              %p
-                                Email:
-                                %a{href: "mailto:#{Rails.application.config.settings.contact.email}"}= Rails.application.config.settings.contact.email
-                            %td.expander
                   %table.row
                     %tr
                       %td.wrapper.last

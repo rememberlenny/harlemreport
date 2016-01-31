@@ -1,0 +1,11 @@
+// Page footer
+
+.page__footer {
+  margin-top: 100px;
+  padding: 20px 10px;
+  border-top: 1px solid $gray-lighter;
+
+  ul {
+    @extend .inline-list;
+  }
+}

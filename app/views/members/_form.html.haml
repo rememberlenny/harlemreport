@@ -2,17 +2,12 @@
   = f.error_notification
 
   .form-inputs
-    = f.input :firstname
-    = f.input :lastname
+    = f.input :firstname, required: true
+    = f.input :lastname, required: true
     = f.input :date_received
-    = f.input :zone
-    = f.input :region
     = f.input :chapter
     = f.input :district
     = f.input :sponsor_name
-    = f.input :enshrined
-    = f.input :district_connected
-    = f.input :contact_person
     = f.input :note
 
   .form-actions

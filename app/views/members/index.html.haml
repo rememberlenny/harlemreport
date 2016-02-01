@@ -5,15 +5,9 @@
     %th Firstname
     %th Lastname
     %th Date received
-    %th Zone
-    %th Region
     %th Chapter
     %th District
     %th Sponsor name
-    %th Enshrined
-    %th District connected
-    %th Contact person
-    %th Note
     %th
     %th
     %th
@@ -23,15 +17,9 @@
       %td= member.firstname
       %td= member.lastname
       %td= member.date_received
-      %td= member.zone
-      %td= member.region
       %td= member.chapter
       %td= member.district
       %td= member.sponsor_name
-      %td= member.enshrined
-      %td= member.district_connected
-      %td= member.contact_person
-      %td= member.note
       %td= link_to 'Show', member
       %td= link_to 'Edit', edit_member_path(member)
       %td= link_to 'Destroy', member, :method => :delete, :data => { :confirm => 'Are you sure?' }

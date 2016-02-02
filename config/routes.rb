@@ -1,9 +1,13 @@
 # Route prefixes use a single letter to allow for vanity urls of two or more characters
 Rails.application.routes.draw do
 
+
   authenticate :user, lambda { |user| user.is_admin? } do
+    get '/home' => 'users#show', as: 'user_home'
+    resources :guests
     resources :members
     mount Blazer::Engine, at: "blazer"
+    mount RailsAdmin::Engine => '/admin', :as => 'rails_admin' if defined? RailsAdmin
   end
 
   if defined? Sidekiq
@@ -13,19 +17,9 @@ Rails.application.routes.draw do
     end
   end
 
-  mount RailsAdmin::Engine => '/admin', :as => 'rails_admin' if defined? RailsAdmin
 
   # Static pages
   match '/error' => 'pages#error', via: [:get, :post], as: 'error_page'
-  get '/terms' => 'pages#terms', as: 'terms'
-  get '/privacy' => 'pages#privacy', as: 'privacy'
-
-  # OAuth
-  oauth_prefix = Rails.application.config.auth.omniauth.path_prefix
-  get "#{oauth_prefix}/:provider/callback" => 'users/oauth#create'
-  get "#{oauth_prefix}/failure" => 'users/oauth#failure'
-  get "#{oauth_prefix}/:provider" => 'users/oauth#passthru', as: 'provider_auth'
-  get oauth_prefix => redirect("#{oauth_prefix}/login")
 
   # Devise
   devise_prefix = Rails.application.config.auth.devise.path_prefix
@@ -42,13 +36,10 @@ Rails.application.routes.draw do
   resources :users, path: 'u', only: :show do
     resources :authentications, path: 'accounts'
   end
-  get '/home' => 'users#show', as: 'user_home'
 
   # Dummy preview pages for testing.
   get '/p/test' => 'pages#test', as: 'test'
   get '/p/email' => 'pages#email' if ENV['ALLOW_EMAIL_PREVIEW'].present?
-
-  get 'robots.:format' => 'robots#index'
 
   root 'pages#home'
 end

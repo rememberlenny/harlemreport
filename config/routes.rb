@@ -1,8 +1,10 @@
 # Route prefixes use a single letter to allow for vanity urls of two or more characters
 Rails.application.routes.draw do
-  resources :members
 
-  mount Blazer::Engine, at: "blazer"
+  authenticate :user, lambda { |user| user.admin? } do
+    resources :members
+    mount Blazer::Engine, at: "blazer"
+  end
 
   if defined? Sidekiq
     require 'sidekiq/web'

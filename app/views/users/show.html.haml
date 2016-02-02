@@ -5,8 +5,14 @@
   %li
     .panel
       %h4.text-center
-        =link_to new_member_path do
+        =link_to new_guest_path do
           = image_tag 'new-guest.png'
+          ='New Guest'
+  %li
+    .panel
+      %h4.text-center
+        =link_to guests_path do
+          = image_tag 'find-guest.png'
           ='New Guest'
   %li
     .panel

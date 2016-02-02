@@ -21,6 +21,10 @@ gem 'opengraph_parser'
 gem 'intercom-rails'
 gem 'rollbar'
 
+gem "refile", require: "refile/rails"
+gem "refile-mini_magick"
+gem "refile-s3"
+
 # Monitoring
 gem 'rack-timeout', '~> 0.1.0beta4'
 gem 'newrelic_rpm'

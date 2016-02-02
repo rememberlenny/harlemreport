@@ -1,6 +1,8 @@
 %p#notice= notice
 
 %p
+  = image_tag attachment_url(@member, :photo, :fill, 300, 300, format: "jpg")
+%p
   %b Firstname:
   = @member.firstname
 %p

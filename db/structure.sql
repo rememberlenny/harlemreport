@@ -234,6 +234,45 @@ ALTER SEQUENCE blazer_queries_id_seq OWNED BY blazer_queries.id;
 
 
 --
+-- Name: guests; Type: TABLE; Schema: public; Owner: -; Tablespace: 
+--
+
+CREATE TABLE guests (
+    id integer NOT NULL,
+    firstname character varying(255),
+    lastname character varying(255),
+    status character varying(255),
+    last_meeting date,
+    sponsor_name character varying(255),
+    last_contact date,
+    contact_person character varying(255),
+    note text,
+    created_at timestamp without time zone,
+    updated_at timestamp without time zone,
+    profile_image_id character varying(255)
+);
+
+
+--
+-- Name: guests_id_seq; Type: SEQUENCE; Schema: public; Owner: -
+--
+
+CREATE SEQUENCE guests_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+--
+-- Name: guests_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
+--
+
+ALTER SEQUENCE guests_id_seq OWNED BY guests.id;
+
+
+--
 -- Name: members; Type: TABLE; Schema: public; Owner: -; Tablespace: 
 --
 
@@ -252,7 +291,8 @@ CREATE TABLE members (
     contact_person character varying(255),
     note text,
     created_at timestamp without time zone,
-    updated_at timestamp without time zone
+    updated_at timestamp without time zone,
+    photo_id character varying(255)
 );
 
 
@@ -429,6 +469,13 @@ ALTER TABLE ONLY blazer_queries ALTER COLUMN id SET DEFAULT nextval('blazer_quer
 -- Name: id; Type: DEFAULT; Schema: public; Owner: -
 --
 
+ALTER TABLE ONLY guests ALTER COLUMN id SET DEFAULT nextval('guests_id_seq'::regclass);
+
+
+--
+-- Name: id; Type: DEFAULT; Schema: public; Owner: -
+--
+
 ALTER TABLE ONLY members ALTER COLUMN id SET DEFAULT nextval('members_id_seq'::regclass);
 
 
@@ -492,6 +539,14 @@ ALTER TABLE ONLY blazer_dashboards
 
 ALTER TABLE ONLY blazer_queries
     ADD CONSTRAINT blazer_queries_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: guests_pkey; Type: CONSTRAINT; Schema: public; Owner: -; Tablespace: 
+--
+
+ALTER TABLE ONLY guests
+    ADD CONSTRAINT guests_pkey PRIMARY KEY (id);
 
 
 --
@@ -590,4 +645,10 @@ INSERT INTO schema_migrations (version) VALUES ('20160131180745');
 INSERT INTO schema_migrations (version) VALUES ('20160202031613');
 
 INSERT INTO schema_migrations (version) VALUES ('20160202033702');
+
+INSERT INTO schema_migrations (version) VALUES ('20160202034008');
+
+INSERT INTO schema_migrations (version) VALUES ('20160202115916');
+
+INSERT INTO schema_migrations (version) VALUES ('20160202115923');
 

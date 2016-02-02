@@ -1,4 +1,5 @@
 class GuestsController < ApplicationController
+  respond_to :html
   before_action :set_guest, only: [:show, :edit, :update, :destroy]
 
   def index
@@ -40,6 +41,6 @@ class GuestsController < ApplicationController
     end
 
     def guest_params
-      params.require(:guest).permit(:firstname, :lastname, :status, :last_meeting, :sponsor_name, :last_contact, :contact_person, :note)
+      params.require(:guest).permit(:photo, :firstname, :lastname, :status, :last_meeting, :sponsor_name, :last_contact, :contact_person, :note)
     end
 end

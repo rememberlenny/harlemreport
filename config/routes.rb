@@ -1,7 +1,7 @@
 # Route prefixes use a single letter to allow for vanity urls of two or more characters
 Rails.application.routes.draw do
 
-  authenticate :user, lambda { |user| user.admin? } do
+  authenticate :user, lambda { |user| user.is_admin? } do
     resources :members
     mount Blazer::Engine, at: "blazer"
   end

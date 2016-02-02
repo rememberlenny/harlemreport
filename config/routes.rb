@@ -2,6 +2,8 @@
 Rails.application.routes.draw do
   resources :members
 
+  mount Blazer::Engine, at: "blazer"
+
   if defined? Sidekiq
     require 'sidekiq/web'
     authenticate :user, lambda {|u| u.is_admin? } do

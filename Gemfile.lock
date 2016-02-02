@@ -36,6 +36,9 @@ GEM
     bcrypt (3.1.7)
     binding_of_caller (0.7.2)
       debug_inspector (>= 0.0.1)
+    blazer (1.0.4)
+      chartkick
+      rails
     builder (3.2.2)
     byebug (3.5.1)
       columnize (~> 0.8)
@@ -53,6 +56,7 @@ GEM
       json
     celluloid (0.15.2)
       timers (~> 1.1.0)
+    chartkick (1.4.1)
     coderay (1.1.0)
     coffee-rails (4.1.0)
       coffee-script (>= 2.2.0)
@@ -97,6 +101,8 @@ GEM
     foundation-rails (5.4.5.0)
       railties (>= 3.1.0)
       sass (>= 3.2.0)
+    groupdate (2.5.0)
+      activesupport (>= 3)
     guard (2.6.1)
       formatador (>= 0.2.4)
       listen (~> 2.7)
@@ -113,12 +119,15 @@ GEM
       activesupport (>= 4.0.1)
       haml (>= 3.1, < 5.0)
       railties (>= 4.0.1)
+    hash-deep-merge (0.1.1)
     hashie (3.3.1)
     headjs-rails (0.4.2)
       rails (>= 3.0.0)
     hike (1.2.3)
     htmlentities (4.3.2)
     i18n (0.6.11)
+    intercom-rails (0.2.29)
+      activesupport (> 3.0)
     jquery-rails (3.1.2)
       railties (>= 3.0, < 5.0)
       thor (>= 0.14, < 2.0)
@@ -133,6 +142,9 @@ GEM
       actionpack (>= 3.0.0)
       activesupport (>= 3.0.0)
     kgio (2.9.2)
+    lazy_high_charts (1.5.4)
+      bundler (>= 1.0)
+      hash-deep-merge
     listen (2.7.11)
       celluloid (>= 0.15.2)
       rb-fsevent (>= 0.9.3)
@@ -176,6 +188,9 @@ GEM
     omniauth-twitter (1.1.0)
       multi_json (~> 1.3)
       omniauth-oauth (~> 1.0)
+    opengraph_parser (0.2.3)
+      addressable
+      nokogiri
     orm_adapter (0.5.0)
     pg (0.17.1)
     premailer (1.8.2)
@@ -254,6 +269,8 @@ GEM
     remotipart (1.2.1)
     responders (1.1.1)
       railties (>= 3.2, < 4.2)
+    rollbar (2.7.1)
+      multi_json
     rspec (3.1.0)
       rspec-core (~> 3.1.0)
       rspec-expectations (~> 3.1.0)
@@ -354,8 +371,10 @@ DEPENDENCIES
   addressable
   airbrake (~> 3.2.1)
   awesome_print
+  blazer
   cancancan (~> 1.9)
   capybara-webkit
+  chartkick
   coffee-rails
   dalli
   database_cleaner
@@ -364,11 +383,14 @@ DEPENDENCIES
   factory_girl_rails
   ffaker
   foundation-rails
+  groupdate
   guard-rspec
   haml-rails
   headjs-rails
+  intercom-rails
   jquery-rails
   jquery-turbolinks
+  lazy_high_charts
   memcachier
   minitest
   newrelic_rpm
@@ -376,6 +398,7 @@ DEPENDENCIES
   omniauth
   omniauth-facebook
   omniauth-twitter
+  opengraph_parser
   pg
   premailer-rails
   pry-byebug
@@ -387,6 +410,7 @@ DEPENDENCIES
   rails_12factor
   rails_admin
   rb-fsevent
+  rollbar
   rspec-activemodel-mocks
   rspec-rails
   rspec-sidekiq
@@ -405,3 +429,6 @@ DEPENDENCIES
   turbolinks
   uglifier
   unicorn
+
+BUNDLED WITH
+   1.10.6

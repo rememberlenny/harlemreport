@@ -1,7 +1,13 @@
 %h1.text-center.subheader
   Harlem Repot Dashboard
 
-%ul.medium-block-grid-3
+%ul.small-block-grid-2.medium-block-grid-2
+  %li
+    .panel
+      %h4.text-center
+        =link_to new_member_path do
+          = image_tag 'new-guest.png'
+          ='New Guest'
   %li
     .panel
       %h4.text-center
@@ -13,7 +19,7 @@
       %h4.text-center
         =link_to  members_path do
           = image_tag 'index-member.png'
-          ='Find/Edit Member'
+          ='Find/Edit'
   %li
     .panel
       %h4.text-center

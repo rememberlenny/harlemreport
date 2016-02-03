@@ -8,6 +8,10 @@
   %section.top-bar-section
     %ul.right
       - if user_signed_in?
+        %li
+          = link_to 'Guests', guests_path
+        %li
+          = link_to 'Members', members_path
         %li.divider
         %li.has-dropdown
           %a.dropdown-toggle{href: user_home_path, data: {toggle: 'dropdown'}}

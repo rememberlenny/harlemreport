@@ -27,4 +27,3 @@
 #= require imagesloaded
 #= require avatar.errors
 
-$("#datepicker").DateTimePicker();

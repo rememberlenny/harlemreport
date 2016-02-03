@@ -1,3 +1,6 @@
+- content_for :on_ready do
+  $("#datepicker").DateTimePicker();
+
 = simple_form_for(@guest) do |f|
   = f.error_notification
 
@@ -37,5 +40,4 @@
     .row
       .small-12.column
         = f.button :submit, class: 'small-12 column even'
-
 

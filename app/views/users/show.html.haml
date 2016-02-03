@@ -1,40 +1,46 @@
-%h1.text-center.subheader
-  Harlem Repot Dashboard
-
-%ul.small-block-grid-2.medium-block-grid-4
-  %li
-    .panel
-      %h4.text-center
-        =link_to new_guest_path do
-          = image_tag 'new-guest.png'
-          ='New Guest'
-  %li
-    .panel
-      %h4.text-center
-        =link_to guests_path do
-          = image_tag 'find-guest.png'
-          ='View Guests'
-  %li
-    .panel
-      %h4.text-center
-        =link_to new_member_path do
-          = image_tag 'new-member.png'
-          ='New Member'
-  %li
-    .panel
-      %h4.text-center
-        =link_to  members_path do
-          = image_tag 'index-member.png'
-          ='View Members'
-  %li
-    .panel
-      %h4.text-center
-        =link_to  blazer_path do
-          = image_tag 'report.png'
-          ='Reports'
-
 .row
-  .medium-10.medium-centered.column
-    - @activities.each do |activity|
-      .row
-        = activity.inspect
+  %h1.text-center.subheader
+    Harlem Repot Dashboard
+.row
+  .small-12.medium-12.large-8.column
+
+    %ul.small-block-grid-2.medium-block-grid-4.large-block-grid-3
+      %li
+        .panel
+          %h4.text-center
+            =link_to new_guest_path do
+              = image_tag 'new-guest.png'
+              ='New Guest'
+      %li
+        .panel
+          %h4.text-center
+            =link_to guests_path do
+              = image_tag 'find-guest.png'
+              ='View Guests'
+      %li
+        .panel
+          %h4.text-center
+            =link_to new_member_path do
+              = image_tag 'new-member.png'
+              ='New Member'
+      %li
+        .panel
+          %h4.text-center
+            =link_to  members_path do
+              = image_tag 'index-member.png'
+              ='View Members'
+      %li
+        .panel
+          %h4.text-center
+            =link_to  blazer_path do
+              = image_tag 'report.png'
+              ='Reports'
+
+  .small-12.medium-12.large-4.column
+    %h4 Activity
+    .row
+      .medium-10.medium-centered.column
+        - @activities.each do |activity|
+          %div.row.activity
+            = activity.owner.email if activity.owner
+            = render_activity activity

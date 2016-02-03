@@ -2,13 +2,14 @@
 Rails.application.routes.draw do
 
 
-  get '/home' => 'users#show', as: 'user_home'
   authenticate :user, lambda { |user| user.is_admin? } do
     resources :guests
     resources :members
     mount Blazer::Engine, at: "blazer"
     mount RailsAdmin::Engine => '/admin', :as => 'rails_admin' if defined? RailsAdmin
   end
+
+  get '/home' => 'users#show', as: 'user_home'
 
   if defined? Sidekiq
     require 'sidekiq/web'

@@ -1,0 +1,9 @@
+%li.list-group-item
+  %span.glyphicon.glyphicon-edit
+  %small.text-muted= a.created_at.strftime('%H:%M:%S %-d %B %Y')
+  %br/
+  %strong= activity.owner ? activity.owner.email : 'Guest'
+  - if a.trackable
+    edited the member #{link_to a.trackable.firstname, member_path(a.trackable)}.
+  - else
+    edited the member that is currently deleted.

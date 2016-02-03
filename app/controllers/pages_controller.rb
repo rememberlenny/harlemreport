@@ -2,6 +2,12 @@ class PagesController < ApplicationController
   skip_authorization_check
   skip_before_action :authenticate_user!
 
+  def home
+    if @current_user.nil?
+      redirect_to user_home_path
+    end
+  end
+
   # Preview html email template
   def email
     tpl = (params[:layout] || 'hero').to_sym

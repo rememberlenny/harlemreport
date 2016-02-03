@@ -1,16 +1,20 @@
 = simple_form_for(@guest) do |f|
   = f.error_notification
 
-  .form-inputs
-    = f.input :firstname
-    = f.input :lastname
-    = f.input :status
-    = f.input :last_meeting
+  .form-inputs.row
+    .small-6.column
+      = f.input :firstname
+    .small-6.column
+      = f.input :lastname
+    .small-2.column
+      = f.input :status
+    .small-12
+      = f.input :last_meeting
     = f.input :sponsor_name
     = f.input :last_contact
     = f.input :contact_person
     = f.input :note
-    = f.attachment_field :photo, direct: true
+    = f.attachment_field :profile_image
 
   .form-actions
     = f.button :submit

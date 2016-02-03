@@ -1,4 +1,4 @@
 class Guest < ActiveRecord::Base
-  validates :firstname, :contact_person, :last_meeting, presence: true
-  attachment :photo, type: :image
+  validates :firstname, presence: true
+  attachment :profile_image
 end

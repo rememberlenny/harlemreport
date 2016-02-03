@@ -42,6 +42,7 @@ class GuestsController < ApplicationController
     end
 
     def guest_params
-      params.require(:guest).permit(:photo, :firstname, :lastname, :status, :last_meeting, :sponsor_name, :last_contact, :contact_person, :note)
+      params.require(:guest).permit(:profile_image, :profile_image_id, :profile_image_cache_id, :firstname, :lastname, :status, :last_meeting, :sponsor_name, :last_contact, :contact_person, :note)
+
     end
 end

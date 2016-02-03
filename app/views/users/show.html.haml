@@ -42,5 +42,5 @@
       .medium-10.medium-centered.column
         - @activities.each do |activity|
           %div.row.activity
-            = activity.owner.email if activity.owner
-            = render_activity activity
+            %ul{style: 'list-style: none'}
+              = render_activity activity

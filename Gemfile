@@ -15,6 +15,8 @@ gem 'terminal-notifier', group: [:development]
 
 gem 'public_activity'
 gem 'blazer'
+gem 'hightop'
+gem 'active_median'
 gem 'groupdate'
 gem "lazy_high_charts"
 gem "chartkick"

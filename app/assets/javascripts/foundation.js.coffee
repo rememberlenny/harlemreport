@@ -14,6 +14,7 @@
 #= require foundation/foundation.tooltip
 #= require foundation/foundation.topbar
 #= require foundation/foundation.equalizer
+#= require foundation-datetimepicker
 
 # StarterKit uses Head.js instead of Modernizr and html5shiv.
 # Polyfill Modernizr methods as needed with Head.js methods.
@@ -24,3 +25,5 @@ window.Modernizr = {
 head.ready ->
   $(document).on 'ready page:load', ->
     $(document).foundation()
+
+$('.datetimepicker').fdatetimepicker()

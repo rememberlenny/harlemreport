@@ -20,6 +20,7 @@ gem "chartkick"
 gem 'opengraph_parser'
 gem 'intercom-rails'
 gem 'rollbar'
+gem 'foundation-datetimepicker-rails'
 
 gem "refile", require: "refile/rails"
 gem "refile-mini_magick"

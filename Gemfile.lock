@@ -106,6 +106,7 @@ GEM
     font-awesome-rails (4.2.0.0)
       railties (>= 3.2, < 5.0)
     formatador (0.2.5)
+    foundation-datetimepicker-rails (0.2.1)
     foundation-rails (5.4.5.0)
       railties (>= 3.1.0)
       sass (>= 3.2.0)
@@ -412,6 +413,7 @@ DEPENDENCIES
   devise-async
   factory_girl_rails
   ffaker
+  foundation-datetimepicker-rails
   foundation-rails
   groupdate
   guard-rspec

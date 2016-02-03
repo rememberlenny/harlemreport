@@ -26,4 +26,4 @@ head.ready ->
   $(document).on 'ready page:load', ->
     $(document).foundation()
 
-$('.datetimepicker').fdatetimepicker()
+

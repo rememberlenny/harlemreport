@@ -1,6 +1,7 @@
 = simple_form_for(@guest) do |f|
   = f.error_notification
 
+
   .form-inputs
     .row
       .small-6.column
@@ -13,10 +14,14 @@
       .small-6.column
         = f.input :contact_person
     .row
-      .small-6.column
-        = f.input :last_meeting
-      .small-6.column
-        = f.input :last_contact
+      .small-6.column.datepicker
+        = f.input :last_meeting, as: :string, :input_html => { data: {field: "date"}}, value: Date.new
+      .small-6.column.datepicker
+        = f.input :last_contact, as: :string, :input_html => { data: {field: "date"}}, value: Date.new
+    .row
+      .small-12
+        #datepicker
+
     .row
       .small-6.column
         = f.input :sponsor_name
@@ -32,3 +37,5 @@
     .row
       .small-12.column
         = f.button :submit, class: 'small-12 column even'
+
+

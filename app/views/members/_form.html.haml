@@ -8,10 +8,13 @@
       .small-6.column
         = f.input :lastname, required: true
     .row
-      .small-6.column
-        = f.input :date_received
+      .small-6.column.datepicker
+        = f.input :date_received, :input_html => { data: {field: "date"}}
       .small-6.column
         = f.input :sponsor_name
+    .row
+      .small-12
+        #datepicker
     .row
       .small-12.column
         %label

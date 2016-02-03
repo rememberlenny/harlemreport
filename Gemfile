@@ -13,6 +13,7 @@ gem 'terminal-notifier', group: [:development]
 # LINUX
 # gem 'rb-inotify', :group => [:development, :test]   # monitor file changes without hammering the disk
 
+gem 'public_activity'
 gem 'blazer'
 gem 'groupdate'
 gem "lazy_high_charts"

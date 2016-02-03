@@ -30,6 +30,44 @@ SET default_tablespace = '';
 SET default_with_oids = false;
 
 --
+-- Name: activities; Type: TABLE; Schema: public; Owner: -; Tablespace: 
+--
+
+CREATE TABLE activities (
+    id integer NOT NULL,
+    trackable_id integer,
+    trackable_type character varying(255),
+    owner_id integer,
+    owner_type character varying(255),
+    key character varying(255),
+    parameters text,
+    recipient_id integer,
+    recipient_type character varying(255),
+    created_at timestamp without time zone,
+    updated_at timestamp without time zone
+);
+
+
+--
+-- Name: activities_id_seq; Type: SEQUENCE; Schema: public; Owner: -
+--
+
+CREATE SEQUENCE activities_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+--
+-- Name: activities_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
+--
+
+ALTER SEQUENCE activities_id_seq OWNED BY activities.id;
+
+
+--
 -- Name: authentications; Type: TABLE; Schema: public; Owner: -; Tablespace: 
 --
 
@@ -427,6 +465,13 @@ ALTER SEQUENCE users_id_seq OWNED BY users.id;
 -- Name: id; Type: DEFAULT; Schema: public; Owner: -
 --
 
+ALTER TABLE ONLY activities ALTER COLUMN id SET DEFAULT nextval('activities_id_seq'::regclass);
+
+
+--
+-- Name: id; Type: DEFAULT; Schema: public; Owner: -
+--
+
 ALTER TABLE ONLY authentications ALTER COLUMN id SET DEFAULT nextval('authentications_id_seq'::regclass);
 
 
@@ -491,6 +536,14 @@ ALTER TABLE ONLY rails_admin_histories ALTER COLUMN id SET DEFAULT nextval('rail
 --
 
 ALTER TABLE ONLY users ALTER COLUMN id SET DEFAULT nextval('users_id_seq'::regclass);
+
+
+--
+-- Name: activities_pkey; Type: CONSTRAINT; Schema: public; Owner: -; Tablespace: 
+--
+
+ALTER TABLE ONLY activities
+    ADD CONSTRAINT activities_pkey PRIMARY KEY (id);
 
 
 --
@@ -574,6 +627,27 @@ ALTER TABLE ONLY users
 
 
 --
+-- Name: index_activities_on_owner_id_and_owner_type; Type: INDEX; Schema: public; Owner: -; Tablespace: 
+--
+
+CREATE INDEX index_activities_on_owner_id_and_owner_type ON activities USING btree (owner_id, owner_type);
+
+
+--
+-- Name: index_activities_on_recipient_id_and_recipient_type; Type: INDEX; Schema: public; Owner: -; Tablespace: 
+--
+
+CREATE INDEX index_activities_on_recipient_id_and_recipient_type ON activities USING btree (recipient_id, recipient_type);
+
+
+--
+-- Name: index_activities_on_trackable_id_and_trackable_type; Type: INDEX; Schema: public; Owner: -; Tablespace: 
+--
+
+CREATE INDEX index_activities_on_trackable_id_and_trackable_type ON activities USING btree (trackable_id, trackable_type);
+
+
+--
 -- Name: index_authentications_on_provider; Type: INDEX; Schema: public; Owner: -; Tablespace: 
 --
 
@@ -651,4 +725,6 @@ INSERT INTO schema_migrations (version) VALUES ('20160202034008');
 INSERT INTO schema_migrations (version) VALUES ('20160202115916');
 
 INSERT INTO schema_migrations (version) VALUES ('20160202115923');
+
+INSERT INTO schema_migrations (version) VALUES ('20160203153333');
 

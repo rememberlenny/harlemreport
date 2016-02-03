@@ -32,3 +32,7 @@
         =link_to  blazer_path do
           = image_tag 'report.png'
           ='Reports'
+
+.row
+  .medium-10.medium-centered.column
+    = render_activities(@activities, layout: :activity)

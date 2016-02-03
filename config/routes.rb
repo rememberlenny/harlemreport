@@ -2,8 +2,8 @@
 Rails.application.routes.draw do
 
 
+  get '/home' => 'users#show', as: 'user_home'
   authenticate :user, lambda { |user| user.is_admin? } do
-    get '/home' => 'users#show', as: 'user_home'
     resources :guests
     resources :members
     mount Blazer::Engine, at: "blazer"

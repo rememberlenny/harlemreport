@@ -13,9 +13,13 @@
         = f.input :lastname
     .row
       .small-6.column
-        = f.input :status
+        %label
+          Chapter
+          = f.select :chapter, options_for_select(harlem_chapters)
       .small-6.column
-        = f.input :contact_person
+        %label
+          Status
+          = f.select :status, options_for_select(guest_status)
     .row
       .small-6.column.datepicker
         = f.input :last_meeting, as: :string, :input_html => { data: {field: "date"}}, value: Date.new

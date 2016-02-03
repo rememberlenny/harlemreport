@@ -2,14 +2,30 @@
   = f.error_notification
 
   .form-inputs
-    = f.input :firstname, required: true
-    = f.input :lastname, required: true
-    = f.input :date_received
-    = f.input :chapter
-    = f.input :district
-    = f.input :sponsor_name
-    = f.input :note
-    = f.attachment_field :photo
-
+    .row
+      .small-6.column
+        = f.input :firstname, required: true
+      .small-6.column
+        = f.input :lastname, required: true
+    .row
+      .small-6.column
+        = f.input :date_received
+      .small-6.column
+        = f.input :sponsor_name
+    .row
+      .small-12.column
+        %label
+          Photo
+          = f.attachment_field :photo
+    .row
+      .small-6.column
+        = f.input :chapter
+      .small-6.column
+        = f.input :district
+    .row
+      .small-12.column
+        = f.input :note
   .form-actions
-    = f.button :submit
+    .row
+      .small-12.column
+        = f.button :submit

@@ -39,7 +39,7 @@
   .small-12.medium-12.large-4.column
     %h4 Activity
     .row
-      .medium-10.medium-centered.column
+      .medium-10.medium-centered.column{style: 'max-height: 500px; overflow-y: scroll;'}
         - @activities.each do |activity|
           %div.row.activity
             %ul{style: 'list-style: none'}

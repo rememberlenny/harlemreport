@@ -1,4 +1,6 @@
 class ApplicationController < ActionController::Base
+  include PublicActivity::GuestsController
+  include PublicActivity::MembersController
   if ENV['BASIC_AUTH']
     user, pass = ENV['BASIC_AUTH'].split(':')
     http_basic_authenticate_with name: user, password: pass

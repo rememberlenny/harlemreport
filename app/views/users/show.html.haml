@@ -35,4 +35,6 @@
 
 .row
   .medium-10.medium-centered.column
-    = render_activities(@activities, layout: :activity)
+    - @activities.each do |activity|
+      .row
+        = activity.inspect

@@ -1,4 +1,4 @@
 class Member < ActiveRecord::Base
   validates :firstname, :sponsor_name, presence: true
-  attachment :photo
+  attachment :photo, type: :image
 end

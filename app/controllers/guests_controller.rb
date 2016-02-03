@@ -1,4 +1,5 @@
 class GuestsController < ApplicationController
+  load_and_authorize_resource :user
   respond_to :html
   before_action :set_guest, only: [:show, :edit, :update, :destroy]
 

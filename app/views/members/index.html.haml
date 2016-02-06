@@ -6,8 +6,6 @@
     %th Lastname
     %th Date received
     %th Chapter
-    %th District
-    %th Sponsor name
     %th
     %th
     %th
@@ -18,12 +16,11 @@
       %td= member.lastname
       %td= member.date_received
       %td= member.chapter
-      %td= member.district
-      %td= member.sponsor_name
       %td= link_to 'Show', member
       %td= link_to 'Edit', edit_member_path(member)
       %td= link_to 'Destroy', member, :method => :delete, :data => { :confirm => 'Are you sure?' }
 
 %br
 
-= link_to 'New Member', new_member_path
+= link_to 'New Member', new_member_path, class: 'button'
+

@@ -2,13 +2,15 @@
 // Prefer imports over require
 // http://pivotallabs.com/structure-your-sass-files-with-import/
 //
-
+//= require selectize
+//= require selectize.default
 //= require_self
 
 // Core
 @import "variables";
 @import "foundation";
 @import "foundation-icons";
+@import 'foundation-datetimepicker';
 @import "icons_social";
 @import "auth";
 @import "avatar";

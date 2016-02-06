@@ -108,6 +108,7 @@ GEM
     font-awesome-rails (4.2.0.0)
       railties (>= 3.2, < 5.0)
     formatador (0.2.5)
+    foundation-datetimepicker-rails (0.2.1)
     foundation-rails (5.4.5.0)
       railties (>= 3.1.0)
       sass (>= 3.2.0)
@@ -344,6 +345,7 @@ GEM
     sdoc (0.4.1)
       json (~> 1.7, >= 1.7.7)
       rdoc (~> 4.0)
+    selectize-rails (0.12.1)
     settingslogic (2.0.9)
     shoulda-matchers (2.7.0)
       activesupport (>= 3.0.0)
@@ -422,6 +424,7 @@ DEPENDENCIES
   devise-async
   factory_girl_rails
   ffaker
+  foundation-datetimepicker-rails
   foundation-rails
   groupdate
   guard-rspec
@@ -461,6 +464,7 @@ DEPENDENCIES
   rspec-sidekiq
   sass-rails
   sdoc
+  selectize-rails
   settingslogic
   shoulda-matchers
   sidekiq

@@ -2,6 +2,10 @@
 Rails.application.routes.draw do
 
 
+  get 'reports/ymd'
+
+  get 'reports/received_week'
+
   authenticate :user, lambda { |user| user.is_admin? } do
     resources :guests
     resources :members

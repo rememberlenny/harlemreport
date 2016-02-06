@@ -21,6 +21,11 @@
 #= require jquery.scrollto
 #= require refile
 #= require DateTimePicker
+#= require selectize
+#= require stickytableheaders
+#= require list
+#= require stupidtable
+#= require foundation-datetimepicker
 
 # Add error class to .avatar images if they fail to load
 # See avatar.scss and _avatar.html.haml

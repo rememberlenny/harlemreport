@@ -12,7 +12,7 @@ gem 'terminal-notifier-guard', group: [:development]  # notify terminal when spe
 gem 'terminal-notifier', group: [:development]
 # LINUX
 # gem 'rb-inotify', :group => [:development, :test]   # monitor file changes without hammering the disk
-
+gem 'foundation-datetimepicker-rails'
 gem 'public_activity'
 gem 'blazer'
 gem 'hightop'
@@ -23,6 +23,7 @@ gem "chartkick"
 gem 'opengraph_parser'
 gem 'intercom-rails'
 gem 'rollbar'
+gem "selectize-rails"
 
 gem "refile", require: "refile/rails"
 gem "refile-mini_magick"

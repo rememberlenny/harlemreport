@@ -333,7 +333,9 @@ CREATE TABLE members (
     note text,
     created_at timestamp without time zone,
     updated_at timestamp without time zone,
-    photo_id character varying(255)
+    photo_id character varying(255),
+    division character varying(255),
+    last_contact date
 );
 
 
@@ -736,4 +738,8 @@ INSERT INTO schema_migrations (version) VALUES ('20160203161859');
 INSERT INTO schema_migrations (version) VALUES ('20160206173513');
 
 INSERT INTO schema_migrations (version) VALUES ('20160206173514');
+
+INSERT INTO schema_migrations (version) VALUES ('20160206175955');
+
+INSERT INTO schema_migrations (version) VALUES ('20160206180255');
 

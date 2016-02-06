@@ -13,6 +13,13 @@
     .row
       .small-6.column
         %label
+          Division
+          = f.select :division, options_for_select(division_status)
+      .small-6.column
+        = f.input :district
+    .row
+      .small-6.column
+        %label
           Chapter
           = f.select :chapter, options_for_select(harlem_chapters)
       .small-6.column
@@ -33,6 +40,16 @@
     .row
       .small-12.column
         = f.input :note
+    .row
+      .small-6.column
+        = f.input :contact_person
+      .small-6.column
+        = f.input :last_contact, as: :string, :input_html => { data: {field: "date"}}, value: Date.new
+    .row
+      .small-4.column
+        = f.input :enshrined, label: "Enshrined"
+      .small-4.column
+        = f.input :district_connected, label: "Connected to district"
   .form-actions
     .row
       .small-12.column

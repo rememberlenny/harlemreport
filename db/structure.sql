@@ -289,7 +289,8 @@ CREATE TABLE guests (
     updated_at timestamp without time zone,
     profile_image_id character varying(255),
     chapter character varying(255),
-    district character varying(255)
+    district character varying(255),
+    division character varying(255)
 );
 
 
@@ -733,4 +734,6 @@ INSERT INTO schema_migrations (version) VALUES ('20160203153333');
 INSERT INTO schema_migrations (version) VALUES ('20160203161859');
 
 INSERT INTO schema_migrations (version) VALUES ('20160206173513');
+
+INSERT INTO schema_migrations (version) VALUES ('20160206173514');
 

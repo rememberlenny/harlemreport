@@ -15,14 +15,33 @@ module ApplicationHelper
     end
   end
 
+  def harlem_district_array
+    return [
+      ['Fort George',
+        ['Cloisters', 'Dyckman', 'Fort Tryon', 'Haven Heights', 'Hudson Heights']
+      ],
+      ['Harlem',
+        ['Astor Row', 'Central Park North', 'East Harlem', 'Marcus Garvey Park']
+      ],
+      ['Morningside',
+        ['Frederick Douglass Blvd', 'Hancock Park', 'Morningside North', 'Teachers College', 'University Grove']
+      ],
+      ['Washington Heights',
+        ['Bridgeview', 'Coogan\'s Bluff', 'Hamilton Grange','New Amsterdam', 'St Nicholas Peak']
+      ],
+      ['West Harlem',
+        ['Broadway Heights', 'City College', 'Convent Gardens', 'Hamilton Heights', 'Sugar Hill']
+      ]
+    ]
+  end
+
   def harlem_chapters
     [
-      ['', ''],
-      ['Fort George', 'FoGe'],
-      ['Harlem', 'Harl'],
-      ['Morningside', 'Morn'],
-      ['Washington Heights', 'WaHe'],
-      ['West Harlem', 'WeHa']
+      ['Fort George', 'FortGeorge'],
+      ['Harlem', 'Harlem'],
+      ['Morningside', 'Morningside'],
+      ['Washington Heights', 'WashingtonHeights'],
+      ['West Harlem', 'WestHarlem']
     ]
   end
 

@@ -36,4 +36,14 @@ module ApplicationHelper
       ['4. Ready to Receive', 'ready_to_receive']
     ]
   end
+
+  def division_status
+    [
+      ['', ''],
+      ['YWD', 'YWD'],
+      ['YMD', 'YMD'],
+      ['WD', 'WD'],
+      ['MD', 'MD'],
+    ]
+  end
 end

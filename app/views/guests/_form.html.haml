@@ -8,9 +8,16 @@
   .form-inputs
     .row
       .small-6.column
-        = f.input :firstname
+        = f.input :firstname, label: 'First Name'
       .small-6.column
-        = f.input :lastname
+        = f.input :lastname, label: 'Last Name'
+    .row
+      .small-6.column
+        %label
+          Division
+          = f.select :division, options_for_select(division_status)
+      .small-6.column
+        = f.input :sponsor_name
     .row
       .small-6.column
         %label
@@ -30,8 +37,6 @@
         #datepicker
 
     .row
-      .small-6.column
-        = f.input :sponsor_name
       .small-6.column
         %label
           Photo

@@ -387,7 +387,18 @@ CREATE TABLE members (
     updated_at timestamp without time zone,
     photo_id character varying(255),
     division character varying(255),
-    last_contact date
+    last_contact date,
+    territory character varying,
+    member_uid character varying,
+    email character varying,
+    phone_primary character varying,
+    phone_secondary character varying,
+    address text,
+    state character varying,
+    zipcode character varying,
+    subscription boolean,
+    auto_renewal boolean,
+    sustaining_contributor boolean
 );
 
 
@@ -909,4 +920,6 @@ INSERT INTO schema_migrations (version) VALUES ('20160207050151');
 INSERT INTO schema_migrations (version) VALUES ('20160207050152');
 
 INSERT INTO schema_migrations (version) VALUES ('20160207133711');
+
+INSERT INTO schema_migrations (version) VALUES ('20160207133712');
 

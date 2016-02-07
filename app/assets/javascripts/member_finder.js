@@ -15,7 +15,7 @@ function setup_member_search(member_data){
       maxItems: 1,
       valueField: 'id',
       labelField: 'name',
-      searchField: ['firstname', 'lastname', 'chapter'],
+      searchField: ['firstname', 'lastname', 'chapter', 'district'],
       sortField: [
         {field: 'firstname', direction: 'asc'},
         {field: 'lastname', direction: 'asc'}
@@ -26,7 +26,7 @@ function setup_member_search(member_data){
           var name = formatName(item);
           return '<div>' +
             (name ? '<span class="name">' + escape(name) + '</span>' : '') +
-            (item.chapter ? '<span class="chapter">' + escape(item.chapter) + '</span>' : '') +
+            (item.chapter ? ' - <span class="chapter">' + escape(item.chapter) + '</span>' : '') +
           '</div>';
         },
         option: function(item, escape) {
@@ -35,7 +35,7 @@ function setup_member_search(member_data){
           var caption = name ? item.chapter : null;
           return '<div>' +
             '<span class="label">' + escape(label) + '</span>' +
-            (caption ? '<span class="caption">' + escape(caption) + '</span>' : '') +
+            (caption ? ' - <span class="caption">' + escape(caption) + '</span>' : '') +
           '</div>';
         }
       },

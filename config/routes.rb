@@ -2,11 +2,11 @@
 Rails.application.routes.draw do
 
 
-  get 'reports/ymd'
-
-  get 'reports/received_week'
 
   authenticate :user, lambda { |user| user.is_admin? } do
+    get 'reports' => 'reports#overall', as: 'reports'
+    get 'reports/ymd'  => 'reports#ymd', as: 'report_ymd'
+    get 'reports/received_week'  => 'reports#received_week', as: 'report_received_last_week'
     resources :guests
     resources :members
     mount Blazer::Engine, at: "blazer"

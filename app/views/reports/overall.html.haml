@@ -7,3 +7,5 @@
       .small-12.medium-6.column
         %h4 New Members by Chapter
         = bar_chart Member.group(:chapter).count
+    .row
+      = link_to 'Deep dive', blazer_path, class: 'button large small-12 column'

@@ -100,6 +100,9 @@ GEM
       addressable
     dalli (2.7.5)
     database_cleaner (1.5.1)
+    datashift (0.15.0)
+      rubyzip
+      spreadsheet
     debug_inspector (0.0.2)
     devise (3.5.6)
       bcrypt (~> 3.0)
@@ -383,8 +386,10 @@ GEM
       rspec (~> 3.0, >= 3.0.0)
       sidekiq (>= 2.4.0)
     rspec-support (3.4.1)
+    ruby-ole (1.2.12)
     ruby_parser (3.7.3)
       sexp_processor (~> 4.1)
+    rubyzip (1.1.7)
     safe_yaml (1.0.4)
     safely_block (0.1.0)
       errbase
@@ -421,6 +426,8 @@ GEM
       rack-protection (~> 1.4)
       tilt (>= 1.3, < 3)
     slop (3.6.0)
+    spreadsheet (1.1.1)
+      ruby-ole (>= 1.0)
     spring (1.6.3)
     spring-commands-rspec (1.0.4)
       spring (>= 0.9.1)
@@ -474,6 +481,7 @@ DEPENDENCIES
   coffee-rails
   dalli
   database_cleaner
+  datashift
   devise
   devise-async
   factory_girl_rails

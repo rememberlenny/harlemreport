@@ -1,3 +1,11 @@
+GIT
+  remote: http://github.com/autotelik/datashift
+  revision: 867db7902da11db36cf4821b296f5d2701aeae51
+  specs:
+    datashift (0.16.0)
+      rubyzip
+      spreadsheet
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -100,9 +108,6 @@ GEM
       addressable
     dalli (2.7.5)
     database_cleaner (1.5.1)
-    datashift (0.15.0)
-      rubyzip
-      spreadsheet
     debug_inspector (0.0.2)
     devise (3.5.6)
       bcrypt (~> 3.0)
@@ -481,7 +486,7 @@ DEPENDENCIES
   coffee-rails
   dalli
   database_cleaner
-  datashift
+  datashift!
   devise
   devise-async
   factory_girl_rails

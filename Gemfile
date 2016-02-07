@@ -68,7 +68,7 @@ gem 'foundation-rails', '~> 5.4.5.0'
 # gem 'bourbon'
 # gem 'neat'
 # gem 'country_select'
-gem 'datashift'
+gem 'datashift', :git => 'http://github.com/autotelik/datashift'
 
 # Email
 gem 'premailer-rails'

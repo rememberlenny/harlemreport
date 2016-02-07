@@ -22,6 +22,11 @@ class GuestsController < ApplicationController
 
   def create
     @guest = Guest.new(guest_params)
+    sponsor_id = Integer(guest_params.sponsor_name) rescue nil
+    if sponsor_id.is_a? Numeric
+      member = Member.find(sponsor_id)
+      @guest.sponsor_name = member.firstname + ' ' + member.lastname
+    end
     @guest.save
     respond_with(@guest)
   end

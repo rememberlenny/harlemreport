@@ -1,0 +1,9 @@
+.row
+  .small-12.column
+    .row
+      .small-12.medium-6.column
+        %h4 New Guests by Day
+        = area_chart Guest.group_by_day(:created_at).count
+      .small-12.medium-6.column
+        %h4 New Members by Chapter
+        = bar_chart Member.group(:chapter).count

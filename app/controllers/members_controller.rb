@@ -1,7 +1,7 @@
 class MembersController < ApplicationController
   load_and_authorize_resource :user
   before_action :set_member, only: [:show, :edit, :update, :destroy]
-  respond_to :html
+  respond_to :html, :json
 
   def index
     @members = Member.all

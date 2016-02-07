@@ -26,6 +26,8 @@
 #= require list
 #= require stupidtable
 #= require foundation-datetimepicker
+#= require form_improvements
+#= require member_finder
 
 # Add error class to .avatar images if they fail to load
 # See avatar.scss and _avatar.html.haml
@@ -33,29 +35,3 @@
 #= require avatar.errors
 
 
-$('table').stickyTableHeaders();
-$("table").stupidtable();
-
-$('#member_district').selectize({
-    sortField: 'text'
-});
-
-$('#member_chapter').selectize({
-    sortField: 'text'
-});
-
-$('#member_division').selectize({
-    sortField: 'text'
-});
-
-$('#guest_district').selectize({
-    sortField: 'text'
-});
-
-$('#guest_chapter').selectize({
-    sortField: 'text'
-});
-
-$('#guest_division').selectize({
-    sortField: 'text'
-});

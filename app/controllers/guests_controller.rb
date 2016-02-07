@@ -1,6 +1,6 @@
 class GuestsController < ApplicationController
   load_and_authorize_resource :user
-  respond_to :html
+  respond_to :html, :json
   before_action :set_guest, only: [:show, :edit, :update, :destroy]
 
   def index

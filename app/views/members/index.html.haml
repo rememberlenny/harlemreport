@@ -1,26 +1,34 @@
-%h1 Listing members
+#index_list
+  %h1 Listing members
 
-%table
-  %tr
-    %th Firstname
-    %th Lastname
-    %th Date received
-    %th Chapter
-    %th
-    %th
-    %th
+  %input.search{:placeholder => "Search"}/
+  %button.sort{"data-sort" => "firstname"}
+    Sort by name
 
-  - @members.each do |member|
+  %table
     %tr
-      %td= member.firstname
-      %td= member.lastname
-      %td= member.date_received
-      %td= member.chapter
-      %td= link_to 'Show', member
-      %td= link_to 'Edit', edit_member_path(member)
-      %td= link_to 'Destroy', member, :method => :delete, :data => { :confirm => 'Are you sure?' }
+      %th{data: {  sort: "string"}} Firstname
+      %th{data: {  sort: "string"}} Lastname
+      %th{data: {  sort: "int"}} Date received
+      %th{data: {  sort: "string"}} Chapter
+      %th{data: {  sort: "string"}} District
+      %th
+      %th
+      %th
 
-%br
+    %tbody.list
+      - @members.each do |member|
+        %tr
+          %td.firstname= member.firstname
+          %td.lastname= member.lastname
+          %td.date_received= member.date_received
+          %td.chapter= member.chapter
+          %td.district= member.district
+          %td= link_to 'Show', member
+          %td= link_to 'Edit', edit_member_path(member)
+          %td= link_to 'Destroy', member, :method => :delete, :data => { :confirm => 'Are you sure?' }
 
-= link_to 'New Member', new_member_path, class: 'button'
+  %br
+
+  = link_to 'New Member', new_member_path, class: 'button'
 

@@ -24,6 +24,7 @@
 #= require selectize
 #= require stickytableheaders
 #= require list
+#= require list.fuzzysearch
 #= require stupidtable
 #= require foundation-datetimepicker
 #= require form_improvements

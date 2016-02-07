@@ -4,7 +4,6 @@ $.get( BASE_URL + "/members.json", function( data ) {
   console.log('Running', data);
 });
 
-
 var formatName = function(item) {
   return $.trim((item.firstname || '') + ' ' + (item.lastname || ''));
 };
@@ -13,7 +12,7 @@ function setup_member_search(member_data){
     $('#guest_sponsor_name').selectize({
       persist: false,
       maxItems: 1,
-      valueField: 'id',
+      valueField: 'firstname',
       labelField: 'name',
       searchField: ['firstname', 'lastname', 'chapter', 'district'],
       sortField: [

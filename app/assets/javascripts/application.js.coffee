@@ -37,3 +37,5 @@
 #= require avatar.errors
 
 
+
+ahoy.trackAll();

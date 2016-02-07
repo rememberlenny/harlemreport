@@ -68,6 +68,58 @@ ALTER SEQUENCE activities_id_seq OWNED BY activities.id;
 
 
 --
+-- Name: ahoy_events; Type: TABLE; Schema: public; Owner: -; Tablespace: 
+--
+
+CREATE TABLE ahoy_events (
+    id uuid NOT NULL,
+    visit_id uuid,
+    user_id integer,
+    name character varying,
+    properties jsonb,
+    "time" timestamp without time zone
+);
+
+
+--
+-- Name: ahoy_messages; Type: TABLE; Schema: public; Owner: -; Tablespace: 
+--
+
+CREATE TABLE ahoy_messages (
+    id integer NOT NULL,
+    token character varying(255),
+    "to" text,
+    user_id integer,
+    user_type character varying(255),
+    mailer character varying(255),
+    subject text,
+    content text,
+    sent_at timestamp without time zone,
+    opened_at timestamp without time zone,
+    clicked_at timestamp without time zone
+);
+
+
+--
+-- Name: ahoy_messages_id_seq; Type: SEQUENCE; Schema: public; Owner: -
+--
+
+CREATE SEQUENCE ahoy_messages_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+--
+-- Name: ahoy_messages_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
+--
+
+ALTER SEQUENCE ahoy_messages_id_seq OWNED BY ahoy_messages.id;
+
+
+--
 -- Name: authentications; Type: TABLE; Schema: public; Owner: -; Tablespace: 
 --
 
@@ -467,10 +519,51 @@ ALTER SEQUENCE users_id_seq OWNED BY users.id;
 
 
 --
+-- Name: visits; Type: TABLE; Schema: public; Owner: -; Tablespace: 
+--
+
+CREATE TABLE visits (
+    id uuid NOT NULL,
+    visitor_id uuid,
+    ip character varying(255),
+    user_agent text,
+    referrer text,
+    landing_page text,
+    user_id integer,
+    referring_domain character varying(255),
+    search_keyword character varying(255),
+    browser character varying(255),
+    os character varying(255),
+    device_type character varying(255),
+    screen_height integer,
+    screen_width integer,
+    country character varying(255),
+    region character varying(255),
+    city character varying(255),
+    postal_code character varying(255),
+    latitude numeric,
+    longitude numeric,
+    utm_source character varying(255),
+    utm_medium character varying(255),
+    utm_term character varying(255),
+    utm_content character varying(255),
+    utm_campaign character varying(255),
+    started_at timestamp without time zone
+);
+
+
+--
 -- Name: id; Type: DEFAULT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY activities ALTER COLUMN id SET DEFAULT nextval('activities_id_seq'::regclass);
+
+
+--
+-- Name: id; Type: DEFAULT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY ahoy_messages ALTER COLUMN id SET DEFAULT nextval('ahoy_messages_id_seq'::regclass);
 
 
 --
@@ -549,6 +642,22 @@ ALTER TABLE ONLY users ALTER COLUMN id SET DEFAULT nextval('users_id_seq'::regcl
 
 ALTER TABLE ONLY activities
     ADD CONSTRAINT activities_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: ahoy_events_pkey; Type: CONSTRAINT; Schema: public; Owner: -; Tablespace: 
+--
+
+ALTER TABLE ONLY ahoy_events
+    ADD CONSTRAINT ahoy_events_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: ahoy_messages_pkey; Type: CONSTRAINT; Schema: public; Owner: -; Tablespace: 
+--
+
+ALTER TABLE ONLY ahoy_messages
+    ADD CONSTRAINT ahoy_messages_pkey PRIMARY KEY (id);
 
 
 --
@@ -632,6 +741,14 @@ ALTER TABLE ONLY users
 
 
 --
+-- Name: visits_pkey; Type: CONSTRAINT; Schema: public; Owner: -; Tablespace: 
+--
+
+ALTER TABLE ONLY visits
+    ADD CONSTRAINT visits_pkey PRIMARY KEY (id);
+
+
+--
 -- Name: index_activities_on_owner_id_and_owner_type; Type: INDEX; Schema: public; Owner: -; Tablespace: 
 --
 
@@ -650,6 +767,41 @@ CREATE INDEX index_activities_on_recipient_id_and_recipient_type ON activities U
 --
 
 CREATE INDEX index_activities_on_trackable_id_and_trackable_type ON activities USING btree (trackable_id, trackable_type);
+
+
+--
+-- Name: index_ahoy_events_on_time; Type: INDEX; Schema: public; Owner: -; Tablespace: 
+--
+
+CREATE INDEX index_ahoy_events_on_time ON ahoy_events USING btree ("time");
+
+
+--
+-- Name: index_ahoy_events_on_user_id; Type: INDEX; Schema: public; Owner: -; Tablespace: 
+--
+
+CREATE INDEX index_ahoy_events_on_user_id ON ahoy_events USING btree (user_id);
+
+
+--
+-- Name: index_ahoy_events_on_visit_id; Type: INDEX; Schema: public; Owner: -; Tablespace: 
+--
+
+CREATE INDEX index_ahoy_events_on_visit_id ON ahoy_events USING btree (visit_id);
+
+
+--
+-- Name: index_ahoy_messages_on_token; Type: INDEX; Schema: public; Owner: -; Tablespace: 
+--
+
+CREATE INDEX index_ahoy_messages_on_token ON ahoy_messages USING btree (token);
+
+
+--
+-- Name: index_ahoy_messages_on_user_id_and_user_type; Type: INDEX; Schema: public; Owner: -; Tablespace: 
+--
+
+CREATE INDEX index_ahoy_messages_on_user_id_and_user_type ON ahoy_messages USING btree (user_id, user_type);
 
 
 --
@@ -692,6 +844,13 @@ CREATE UNIQUE INDEX index_users_on_reset_password_token ON users USING btree (re
 --
 
 CREATE UNIQUE INDEX index_users_on_unlock_token ON users USING btree (unlock_token);
+
+
+--
+-- Name: index_visits_on_user_id; Type: INDEX; Schema: public; Owner: -; Tablespace: 
+--
+
+CREATE INDEX index_visits_on_user_id ON visits USING btree (user_id);
 
 
 --
@@ -742,4 +901,12 @@ INSERT INTO schema_migrations (version) VALUES ('20160206173514');
 INSERT INTO schema_migrations (version) VALUES ('20160206175955');
 
 INSERT INTO schema_migrations (version) VALUES ('20160206180255');
+
+INSERT INTO schema_migrations (version) VALUES ('20160207050055');
+
+INSERT INTO schema_migrations (version) VALUES ('20160207050151');
+
+INSERT INTO schema_migrations (version) VALUES ('20160207050152');
+
+INSERT INTO schema_migrations (version) VALUES ('20160207133711');
 

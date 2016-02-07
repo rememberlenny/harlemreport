@@ -1,11 +1,14 @@
 #index_list
   %h1 Listing members
 
-  %input.search{:placeholder => "Search"}/
-  %button.sort{"data-sort" => "firstname"}
-    Sort by name
-
-  %table
+  .row
+    .small-12.medium-6.column
+      = link_to 'New Member', new_member_path, class: 'button tiny'
+    .small-12.medium-6.column.text-right
+      %label{style: 'font-size: 18px;'}
+        Search
+        %input.fuzzy-search{:placeholder => "Search"}
+  %table#index.medium-12.column
     %tr
       %th{data: {  sort: "string"}} Firstname
       %th{data: {  sort: "string"}} Lastname

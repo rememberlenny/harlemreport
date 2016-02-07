@@ -1,12 +1,17 @@
 #index_list
 
-
+  .row
+    .small-12.column
+      %label
+        Search
+        %input.fuzzy-search{:placeholder => "Search"}/
+    %br/
+    %br/
   %table#index
     %thead
       %tr
         %th{data: {  sort: "string"}}
           Firstname
-          %input.fuzzy-search{:placeholder => "Search"}/
         %th{data: {  sort: "string"}} Lastname
         %th{data: {  sort: "string"}} Division
         %th{data: {  sort: "string"}} Status

@@ -64,7 +64,7 @@ gem 'coffee-rails'
 # gem 'therubyracer', platforms: :ruby
 
 # Design
-gem 'foundation-rails'
+gem 'foundation-rails', '~> 5.4.5.0'
 # gem 'bourbon'
 # gem 'neat'
 # gem 'country_select'

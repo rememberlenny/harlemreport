@@ -22,6 +22,8 @@ gem "lazy_high_charts"
 gem "chartkick"
 gem 'opengraph_parser'
 gem 'intercom-rails'
+gem 'ahoy_matey'
+gem 'ahoy_email'
 gem 'rollbar'
 gem "selectize-rails"
 

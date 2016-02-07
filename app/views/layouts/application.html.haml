@@ -12,7 +12,6 @@
     = headjs_include_tag 'application', 'data-turbolinks-track' => true
     :javascript
       var BASE_URL = '#{root_url}';
-    = javascript_include_tag 'jquery_2', 'data-turbolinks-track' => true
     = javascript_include_tag "//www.google.com/jsapi", "chartkick"
     = csrf_meta_tags
     = yield :head

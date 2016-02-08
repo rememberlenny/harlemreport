@@ -19,6 +19,7 @@ gem 'hightop'
 gem 'active_median'
 gem 'groupdate'
 gem "lazy_high_charts"
+gem "geocoder"
 gem "chartkick"
 gem 'opengraph_parser'
 gem 'intercom-rails'

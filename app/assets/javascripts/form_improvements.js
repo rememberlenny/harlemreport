@@ -1,6 +1,6 @@
-$(function () {
-  $('#index').stickyTableHeaders();
-});
+// $(function () {
+//   $('#index').stickyTableHeaders();
+// });
 
 $("#index").stupidtable();
 

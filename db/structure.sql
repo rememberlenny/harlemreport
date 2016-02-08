@@ -398,7 +398,10 @@ CREATE TABLE members (
     zipcode character varying,
     subscription boolean,
     auto_renewal boolean,
-    sustaining_contributor boolean
+    sustaining_contributor boolean,
+    latitude double precision,
+    longitude double precision,
+    entire_address text
 );
 
 
@@ -922,4 +925,8 @@ INSERT INTO schema_migrations (version) VALUES ('20160207050152');
 INSERT INTO schema_migrations (version) VALUES ('20160207133711');
 
 INSERT INTO schema_migrations (version) VALUES ('20160207133712');
+
+INSERT INTO schema_migrations (version) VALUES ('20160208134712');
+
+INSERT INTO schema_migrations (version) VALUES ('20160208134739');
 

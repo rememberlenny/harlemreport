@@ -493,6 +493,7 @@ DEPENDENCIES
   ffaker
   foundation-datetimepicker-rails
   foundation-rails (~> 5.4.5.0)
+  geocoder
   groupdate
   guard-rspec
   haml-rails

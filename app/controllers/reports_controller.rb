@@ -3,6 +3,9 @@ class ReportsController < ApplicationController
   def ymd
   end
 
+  def nearby
+  end
+
   def received_week
   end
 end

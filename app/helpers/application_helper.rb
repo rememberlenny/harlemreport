@@ -37,32 +37,34 @@ module ApplicationHelper
 
   def harlem_chapters
     [
-      ['Fort George', 'FortGeorge'],
+      ['Fort George', 'Fort George'],
       ['Harlem', 'Harlem'],
       ['Morningside', 'Morningside'],
-      ['Washington Heights', 'WashingtonHeights'],
-      ['West Harlem', 'WestHarlem']
+      ['Washington Heights', 'Washington Heights'],
+      ['West Harlem', 'West Harlem']
     ]
   end
 
   def guest_status
     [
       ['', ''],
-      ['0. First Meeting', 'first_meeting'],
-      ['1. Second Meeting', 'second_meeting'],
-      ['2. Long Time Guest', 'long_time_guest'],
-      ['3. Has Publications', 'has_publications'],
-      ['4. Ready to Receive', 'ready_to_receive']
+      ['. Just met and invited', 'Just met and invited'],
+      ['. Friend who was invited', 'Friend who was invited'],
+      ['Warm. First Meeting', 'First Meeting'],
+      ['Hot. Second Meeting', 'Second Meeting'],
+      ['Hot. Long Time Guest', 'Long Time Guest'],
+      ['Hot. Has Publications', 'has_publications'],
+      ['Burning. Ready to Receive', 'ready_to_receive']
     ]
   end
 
   def division_status
     [
       ['', ''],
-      ['YWD', 'YWD'],
-      ['YMD', 'YMD'],
-      ['WD', 'WD'],
-      ['MD', 'MD'],
+      ['YWD', 'Young Women\'s Division'],
+      ['YMD', 'Young Men\'s Division'],
+      ['WD', 'Women\'s Division'],
+      ['MD', 'Men\'s Division'],
     ]
   end
 end

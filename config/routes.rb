@@ -7,6 +7,8 @@ Rails.application.routes.draw do
     get 'reports' => 'reports#overall', as: 'reports'
     get 'reports/ymd'  => 'reports#ymd', as: 'report_ymd'
     get 'reports/received_week'  => 'reports#received_week', as: 'report_received_last_week'
+    get 'members/:year/:month'  => 'members#index', as: 'members_month'
+    get 'members/:year'  => 'members#index', as: 'members_year'
     resources :guests
     resources :members
     mount Blazer::Engine, at: "blazer"

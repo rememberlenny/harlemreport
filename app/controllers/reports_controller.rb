@@ -4,6 +4,7 @@ class ReportsController < ApplicationController
   end
 
   def nearby
+
   end
 
   def received_week

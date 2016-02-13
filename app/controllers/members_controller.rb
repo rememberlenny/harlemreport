@@ -6,10 +6,10 @@ class MembersController < ApplicationController
   def index
     if params.has_key?(:year) && params[:year].to_i != 0
       year = Date.new(params[:year])
-      @members = Member.created_between(year, year + 1.year - 1.day))
+      @members = Member.where("date_received >= ? AND date_received <= ?", year, year + 1.year - 1.day)
       if params.has_key?(:month) && params[:month].to_i != 0
         month = Date.new(params[:year], param[:month])
-        @members = Member.created_between(month, month + 1.month - 1.day))
+        @members = Member.where("date_received >= ? AND date_received <= ?", month, month + 1.month - 1.day)
       end
     else
       @members = Member.all

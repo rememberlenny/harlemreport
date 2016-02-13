@@ -5,10 +5,10 @@ class MembersController < ApplicationController
 
   def index
     if params.has_key?(:year)
-      year = Date.new(params[:year])
+      year = Date.new(params[:year].to_i)
       @members = Member.where("date_received >= ? AND date_received <= ?", year, year + 1.year - 1.day)
       if params.has_key?(:month)
-        month = Date.new(params[:year], param[:month])
+        month = Date.new(params[:year], param[:month].to_i)
         @members = Member.where("date_received >= ? AND date_received <= ?", month, month + 1.month - 1.day)
       end
     else

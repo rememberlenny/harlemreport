@@ -4,10 +4,10 @@ class MembersController < ApplicationController
   respond_to :html, :json
 
   def index
-    if params.has_key?(:year) && params[:year].to_i != 0
+    if params.has_key?(:year)
       year = Date.new(params[:year])
       @members = Member.where("date_received >= ? AND date_received <= ?", year, year + 1.year - 1.day)
-      if params.has_key?(:month) && params[:month].to_i != 0
+      if params.has_key?(:month)
         month = Date.new(params[:year], param[:month])
         @members = Member.where("date_received >= ? AND date_received <= ?", month, month + 1.month - 1.day)
       end

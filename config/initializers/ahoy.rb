@@ -1,3 +1,3 @@
 class Ahoy::Store < Ahoy::Stores::ActiveRecordStore
-  # customize here
+  Ahoy.geocode = :async
 end
